@@ -24,20 +24,25 @@
    </header>
    <div class="card-section">
       <h2>Toy Inventory</h2>
-      <p >You don't have any toys yet!</p>
-      <p>These are the assets we have to work with.</p>
       
-      <button>+ Add Toy</button>
-      <ul class="counter-ui-container" >
-         <li>
+      <p data-bind="visible:  inventory().length > 0">These are the assets we have to work with.</p>
+      <p data-bind="visible:  inventory().length == 0">You don't have any toys yet!</p>
+      <!-- When you want access to a observable call it like a function -->
+      <button data-bind="click: addItem, enable: inventory().length < 4"> + Add Toy</button>
+      <ul class="counter-ui-container" data-bind="foreach: inventory">
+        <li>
+           <span>
+              <span data-bind="class: $data.icon"></span>
+              <span data-bind="text: $data.text"></span>
+           </span>
+           <!-- Getting the index from the foreach loop on the parent above  -->
             <span>
-               <span ></span>
-               <span class="li_label" ></span>
+               <!-- rem                                 adding mulitlpe databinding to a something         $index should give you the index of the elements in the loop-->
+               <!-- removeItem is on inventory that why we sa parent-->
+               <button data-bind="click: $parent.removeItem, attr: { 'item-index': $index}">&times;</button>
             </span>
-            <!-- <button class="button_small">
-               &times;
-            </button> -->
-         </li>
+           
+        </li>
       </ul>
    </div>
    <footer>
