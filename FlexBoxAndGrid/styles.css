@@ -1,0 +1,38 @@
+.header{
+     /* parent element */
+    background-color: #283593;
+    color: #fff;
+    display: flex; 
+    justify-content: space-between; /* horizontal/primary axis */
+    align-items: center; /* vertical/secondary axis */
+    padding: 0 45px;
+
+}
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease-out;
+
+}
+
+.nav a:hover{
+    color:#c5cae9;
+    /* below works because of the the display: block above */
+    transform: rotate(6deg);
+}
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;;
+    display: flex;;
+}
+
+body{
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+}
+.nav li {
+    margin-left: 20px;
+
+}

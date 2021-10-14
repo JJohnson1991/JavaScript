@@ -10,6 +10,11 @@ const app = Vue.createApp({
             author: 'Jordan Johnson',
             age: 29
         }
-    }
+    },
+    methods: {
+        changeTitle(title){
+            this.title = title;
+        }
+    },
 });
-app.mount('#app')
+app.mount('#app');

@@ -11,6 +11,12 @@
     <h1>What up vue :D</h1>
     <div id="app">
        <p>{{title}} - {{author}} ---{{age}} </p>
+       <!-- <button v-on:click="age++">Increase Age</button>
+       <button v-on:click="age--">Decrease Age</button>
+       <div @click="title = 'something else'">Change Boook title</div> -->
+       <button v-on:click="age++">Increase Age</button>
+       <button v-on:click="age--">Decrease Age</button>
+       <div @click="changeTitle('OatherBringer')">Change Boook title</div> 
     </div>
 
 
